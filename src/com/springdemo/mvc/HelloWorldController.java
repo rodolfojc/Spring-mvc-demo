@@ -13,7 +13,10 @@ public class HelloWorldController {
 	}
 	
 	//CONTROLLER METHOD TO PROCESS THE HTML FORM
-	
+	@RequestMapping("/proccessForm")
+	public String processForm() {
+		return "helloworld";
+	}
 	
 	
 }
