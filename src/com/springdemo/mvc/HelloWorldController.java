@@ -1,6 +1,9 @@
 package com.springdemo.mvc;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -17,6 +20,27 @@ public class HelloWorldController {
 	public String processForm() {
 		return "helloworld";
 	}
+	
+	//NEW CONTROLLER METHOD TO READ FORM DATA
+	//ADD DATA TO MODEL 
+	@RequestMapping("/processFormVersionTwo")
+	public String letsShuutDude(HttpServletRequest request, Model model) {
+		
+		//READ THE REQUEST PARAMETER FROM HTML FORM
+		String theName = request.getParameter("studentName");
+		
+		//CONVERT THE DATA TO ALL CAPITAL
+		theName = theName.toUpperCase();
+		
+		//CREATE THE MESSAGE
+		String result = "Yo! "+theName;
+		
+		//ADD MESSAGE TO MODEL 
+		model.addAttribute("message", result);
+		
+		return"helloworld";
+	}
+	
 	
 	
 }
