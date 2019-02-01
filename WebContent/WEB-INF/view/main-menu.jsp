@@ -1,4 +1,4 @@
-<!DOCTYPE HTLM>
+<!DOCTYPE html>
 <html>
 
 <body>
